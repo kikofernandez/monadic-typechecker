@@ -1,0 +1,70 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 92bda232478d74c0a7eb6fe09918850a37a3dec3ab91856c357611a8d6abb9ef
+
+name:           typechecker
+version:        0.1.0.0
+homepage:       https://github.com/#readme
+bug-reports:    https://github.com//issues
+author:         Anonymous
+maintainer:     Anonymous
+copyright:      MIT
+license:        BSD3
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/
+
+library
+  exposed-modules:
+      Applicative.AST
+      Applicative.Typechecker
+      Backtrace.AST
+      Backtrace.Typechecker
+      Final.AST
+      Final.Typechecker
+      Initial.AST
+      Initial.Typechecker
+      MultiError.AST
+      MultiError.Typechecker
+      PhantomFunctors.AST
+      PhantomFunctors.Typechecker
+      PhantomPhases.AST
+      PhantomPhases.Typechecker
+      Reader.AST
+      Reader.Typechecker
+      Warning.AST
+      Warning.Typechecker
+  other-modules:
+      Paths_typechecker
+  hs-source-dirs:
+      src
+  build-depends:
+                  base >=4.7 && <5
+                , containers
+                , mtl
+                , text >= 1.2.3.1
+  default-language: Haskell2010
+
+test-suite typechecker-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_typechecker
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+                    base >=4.7 && <5
+                , containers
+                 , mtl
+                , text >= 1.2.3.1
+                , typechecker
+  default-language: Haskell2010

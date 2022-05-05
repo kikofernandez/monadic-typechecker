@@ -1,5 +1,11 @@
 OPTS=exec -- haddock --html --hyperlinked-source --odir=docs
 
+build:
+	stack build
+
+test:
+	stack test
+
 doc:
 	stack $(OPTS) src/Initial/AST.hs src/Initial/Typechecker.hs \
 	src/Reader/AST.hs src/Reader/Typechecker.hs \

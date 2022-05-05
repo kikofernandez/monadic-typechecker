@@ -59,6 +59,9 @@ type TypecheckM a = forall m. (MonadReader Env m,
                                MonadError TCError m,
                                MonadWriter [TCWarning] m) => m a
 
+-- type TypecheckM a = WriterT [TCWarning] (ReaderT Env (Exception TCError)) a
+  -- runExcept $ runReaderT (runWriterT (doTypecheck p)) env
+
 -- * Type checking errors
 
 -- | Declaration of type checking errors.
